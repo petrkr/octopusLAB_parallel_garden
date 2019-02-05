@@ -367,6 +367,11 @@ while True:
 
     except Exception as e:
         print("Exception: {0}".format(e))
-        displMessage("Err: main loop",3)
+        try:
+            displMessage("Err: main loop",3)
+        except:
+            # In case OLED error, do not crash
+            pass
+
     #blinkOledPoint()
     time.sleep_ms(1000)
